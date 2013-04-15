@@ -1,0 +1,9 @@
+#summary Instruções de Instalação
+#labels Featured
+
+= Instruções de instalação =
+
+* Verifique se seu aparelho possui compatibilidade com JavaME;
+* Faça o download do executável
+* Transfira para uma pasta de fácil acesso no seu aparelho
+* Realize a instalação
