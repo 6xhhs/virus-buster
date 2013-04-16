@@ -1,0 +1,8 @@
+= Como Jogar =
+
+Apos iniciar o jogo,aperte qualquer tecla direcional para começar a partida
+ 
+*Comandos*
+ * direcional esquerdo :move o antivírus para a esquerda
+ * direcional direito :move o antivírus para a direita
+ * direcional para cima :atirar
