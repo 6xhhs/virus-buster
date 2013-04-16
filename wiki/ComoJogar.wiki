@@ -1,12 +1,13 @@
 #labels Featured
 = Como Jogar =
 
-[https://code.google.com/p/virus-buster/source/browse/wiki/intro.jpg]
+
+[http://virus-buster.googlecode.com/svn/wiki/intro.jpg]
 
 Apos iniciar o jogo,aperte qualquer tecla direcional para começar a partida
  
 
-[https://code.google.com/p/virus-buster/source/browse/wiki/jogo.jpg]
+[http://virus-buster.googlecode.com/svn/wiki/jogo.jpg]
 
 *Comandos*
  * direcional esquerdo :move o antivírus para a esquerda
@@ -15,6 +16,6 @@ Apos iniciar o jogo,aperte qualquer tecla direcional para começar a partida
 
 Se algum virus atigir o antivírus é *Game Over* !!!!!
 
-[https://code.google.com/p/virus-buster/source/browse/wiki/GameOver.jpg]
+[http://virus-buster.googlecode.com/svn/wiki/gameOver.jpg]
 
 Para jogar novamente, aperte qualquer tecla direcional
