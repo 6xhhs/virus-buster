@@ -19,21 +19,21 @@ public class GameDesign {
     public int balaseq001Delay = 200;
     public int[] balaseq001 = {8};
     private Image tile_virus_buster;
-    private Sprite Virus;
-    public int Virusseq001Delay = 200;
-    public int[] Virusseq001 = {4};
-    private TiledLayer Fundo;
-    private Sprite AntiVirus;
-    public int AntiVirusseq004Delay = 200;
-    public int[] AntiVirusseq004 = {12};
-    private Image VB;
-    private Sprite spriteIntro;
-    public int spriteIntroseq001Delay = 200;
-    public int[] spriteIntroseq001 = {0};
-    private Image game_over;
     private Sprite spriteGameOver;
     public int spriteGameOverseq001Delay = 200;
     public int[] spriteGameOverseq001 = {0};
+    private Sprite Virus;
+    public int Virusseq001Delay = 200;
+    public int[] Virusseq001 = {4};
+    private Image game_over;
+    private Sprite spriteIntro;
+    public int spriteIntroseq001Delay = 200;
+    public int[] spriteIntroseq001 = {0};
+    private TiledLayer Fundo;
+    private Image VB;
+    private Sprite AntiVirus;
+    public int AntiVirusseq004Delay = 200;
+    public int[] AntiVirusseq004 = {12};
 //</editor-fold>//GEN-END:|fields|0|
     
 //<editor-fold defaultstate="collapsed" desc=" Generated Methods ">//GEN-BEGIN:|methods|0|
@@ -83,7 +83,7 @@ public class GameDesign {
         getAntiVirus().setPosition(2, 186);
         getAntiVirus().setVisible(true);
         lm.append(getAntiVirus());
-        getFundo().setPosition(1, 1);
+        getFundo().setPosition(0, 0);
         getFundo().setVisible(true);
         lm.append(getFundo());//GEN-END:|101-updateLayerManager|1|101-postUpdate
         // write post-update user code here
