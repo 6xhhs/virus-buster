@@ -177,6 +177,8 @@ public class Jogo extends GameCanvas implements Runnable
                 
                 try{
                     gd.updateLayerManagerForGame_Over(lm);
+                    //alinhando o sprite de game over com o centro da tela
+                    spriteGameOver.setPosition(this.getWidth()/2 - spriteGameOver.getWidth()/2,this.getHeight()/2 - spriteGameOver.getHeight()/2);
                     bala.setVisible(false);
                     antiVirus.setVisible(false);
                     fundo.setVisible(false);
