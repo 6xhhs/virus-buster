@@ -17,9 +17,10 @@ public class Jogo extends GameCanvas implements Runnable
     boolean rodando;
     LayerManager lm;
     Sprite virus;
-    int direcao;
+    int velocidadeVirus;
 
     int linha;
+    int velocidadeBala;
     Sprite antiVirus;
     Sprite bala;
     Sprite spriteIntro;
@@ -30,14 +31,15 @@ public class Jogo extends GameCanvas implements Runnable
     GameDesign gd;
     boolean balaAtirada;
     //inicializa as variaveis
-    void init() throws  IOException
+    public void init() throws  IOException
     {
         gd = new GameDesign();
         this.rodando = true;
         balaAtirada = false;
         this.antiVirus = gd.getAntiVirus();
         this.fundo = gd.getFundo();
-        this.direcao = 6;
+        this.velocidadeVirus = 10;
+        this.velocidadeBala = 10;
         this.spriteIntro = gd.getSpriteIntro();
         this.spriteGameOver = gd.getSpriteGameOver();
         this.linha =0;
@@ -45,6 +47,7 @@ public class Jogo extends GameCanvas implements Runnable
         this.virus = gd.getVirus();
         this.lm = new LayerManager();
         gd.updateLayerManagerForIntro(lm);
+        this.antiVirus.setPosition(this.getHeight()/2 - 8, this.getHeight()-16);
         }
     public Jogo()
     {
@@ -87,6 +90,7 @@ public class Jogo extends GameCanvas implements Runnable
                     try
                     {
                         gd.updateLayerManagerForCena(lm);
+                        this.antiVirus.setPosition(this.getHeight()/2 - 8, this.getHeight()-16);
                         antiVirus.setVisible(true);
                         fundo.setVisible(true);
                         virus.setVisible(true);
@@ -102,6 +106,7 @@ public class Jogo extends GameCanvas implements Runnable
             //lagica da tela de jogo
             else if(tela == 2){
             //se tecla esquerda
+                
             if ((keyState & LEFT_PRESSED) != 0 && antiVirus.getX()> 0 )
             {
                 antiVirus.move(-4,0);
@@ -123,36 +128,35 @@ public class Jogo extends GameCanvas implements Runnable
             }
             //se a bala foi atirada mova ela em y
             if(balaAtirada)
-                bala.move(0,-5);
+                bala.move(0,-velocidadeBala);
             
             //move o "Virus" na direção 
-            virus.move(direcao, 0);
+            virus.move(velocidadeVirus, 0);
             //se o "Virus" sair da tela ,deça uma linha ate chegar no jogador
             if(virus.getX() > this.getWidth() || virus.getX()< 0 )
             {
                 virus.move(0, 16);
-                direcao = -direcao;
+                velocidadeVirus = -velocidadeVirus;
             }
             //verifica se a bala colidio com o virus
             if(bala.collidesWith(virus, false))
             {
                 virus.setPosition(0, 0);
-                direcao =6;
                 balaAtirada = false;
                 bala.setVisible(false);
                 bala.setPosition(0, 0);
                 totalDeletados++;
                 //a cada 3 virus 'deletados' o jogo fica mais dificil
-                if(totalDeletados>=3 && totalDeletados%3 == 0)
-                    if(direcao>0)
+                if(totalDeletados%3 == 0)
+                    if(velocidadeVirus>0)
                     {
-                        direcao+=2;
-                        System.out.println(direcao);
+                        velocidadeVirus+=5;
+                        System.out.println(velocidadeVirus);
                     }
                     else
                     {
-                        direcao-=2;
-                        System.out.println(direcao);
+                        velocidadeVirus-=5;
+                        System.out.println(velocidadeVirus);
                     }
             }
             //permite que o jogador atire denovo
@@ -179,6 +183,7 @@ public class Jogo extends GameCanvas implements Runnable
                     virus.setVisible(false);
                     spriteIntro.setVisible(false);
                     spriteGameOver.setVisible(true);
+                    velocidadeVirus = 10;
                     
                     
                     }catch(Exception ex)
