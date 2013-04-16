@@ -1,9 +1,19 @@
 = Como Jogar =
 
+http://code.google.com/p/virus-buster/source/browse/wiki/intro.jpg
+
 Apos iniciar o jogo,aperte qualquer tecla direcional para começar a partida
  
+
+http://code.google.com/p/virus-buster/source/browse/wiki/jogo.jpg
 
 *Comandos*
  * direcional esquerdo :move o antivírus para a esquerda
  * direcional direito :move o antivírus para a direita
  * direcional para cima :atirar
+
+Se algum virus atigir o antivírus é *Game Over* !!!!!
+
+http://code.google.com/p/virus-buster/source/browse/wiki/GameOver.jpg
+
+Para jogar novamente, aperte qualquer tecla direcional
